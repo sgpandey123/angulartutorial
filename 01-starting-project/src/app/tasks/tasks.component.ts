@@ -17,6 +17,12 @@ export class TasksComponent {
       ((task) => task.userId === this.userId);
   }
 
+  onCompleteTask(id: string) {
+    console.log('Completed task ID:', id);
+    this.tasks = this.tasks.filter ((task)=> task.id !== id);
+    console.log('Remaining tasks:', this.tasks);
+  }
+
    tasks = [
     {
       id: 't1',
